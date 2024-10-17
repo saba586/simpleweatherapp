@@ -8,7 +8,7 @@ const fetchData = async () => {
   const newInput = searchInput.value.trim();
 
   if (newInput === "") {
-    alert("Please enter a city");
+    alert("Please enter name of city");
     return;
   }
 
@@ -46,10 +46,11 @@ const fetchData = async () => {
 
     const weatherImgIcon = document.querySelector(".weatherIcon");
     weatherImgIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+
+    searchInput.value = "";
   } catch (err) {
-    console.log("Error: ", err); 
+    console.log("Error: ", err);
   }
 };
-
 
 clickButton.addEventListener("click", fetchData);
